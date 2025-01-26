@@ -1,0 +1,294 @@
+@font-face {
+    font-family: 'Fortnite';
+    src: url(fonts/fortnite.otf);
+}
+@font-face {
+    font-family: 'Minecraft';
+    src: url(fonts/minecraft.ttf);
+}
+@font-face {
+    font-family: 'Minecraft-reg';
+    src: url(fonts/minecraft-reg.otf);
+}
+
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    height: 100vh;
+    background: linear-gradient(130deg, #91baed, #d6c9c6);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.wave-wrapper img {
+    position: absolute;
+    left: 0;
+}
+
+#shape {
+    position: absolute;
+    left: 0;
+    bottom: -2vw;
+}
+
+/* Wave Animations */
+header img:nth-child(1) {
+    opacity: 0.4;
+    bottom: -0.1vw;
+    animation: move-1 5s infinite;
+}
+
+@keyframes move-1 {
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+header img:nth-child(2) {
+    opacity: 0.3;
+    bottom: 0.5vw;
+    animation: move-2 4s infinite;
+}
+
+@keyframes move-2 {
+    50% {
+        transform: translateY(35px);
+    }
+}
+
+header img:nth-child(3) {
+    bottom: 0.3vw;
+    opacity: 0.2;
+    animation: move-3 3.5s infinite;
+}
+
+@keyframes move-3 {
+    50% {
+        transform: translateY(25px);
+    }
+}
+
+header img:nth-child(4) {
+    bottom: 0.1vw;
+    opacity: 0.3;
+    animation: move-4 3s infinite;
+}
+
+@keyframes move-4 {
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+/* Main Title */
+header h1 {
+    width: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 30%;
+    font-family: 'Minecraft', sans-serif;
+    font-size: 10vmin;
+    color: #fff;
+}
+/* Search Bar Container */
+.search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+.search input::placeholder {
+    color: #a4c4ec; 
+}
+/* Search Input Field */
+.search input {
+    padding: 12px 19px;
+    font-size: 1.5rem;
+    font-family: 'Minecraft-reg', sans-serif;
+    color:#91baed;
+    border: 2px solid #FFFFFFA0;
+    border-radius: 25px;
+    outline: none;
+    width: 300px;
+    transition: border-color 0.3s ease;
+    background-color:#ffff;
+}
+
+.search input:focus {
+    border-color: #91baed;
+}
+
+.search button {
+    padding: 12px 13px;
+    font-size: 0.5rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search button i {
+    font-size: 1rem;
+    color: #91baed;
+}
+.search button:hover i {
+    font-size: 1rem;
+    color: #ffff;
+}
+.search button:hover {
+    background-color: #91baed;
+    color: #fff;
+}
+/* Game Select Section */
+.game-select {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game-select select {
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Minecraft-reg', sans-serif;
+    color: #91baed;
+    border: 2px solid #91baed;
+    border-radius: 25px;
+    outline: none;
+    width: 250px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.game-select select:focus {
+    border-color: #91baed;
+}
+
+/* Two Column Layout for Stats and Skin */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: none; /* Hide initially */
+}
+
+/* Player Stats Section */
+.player-stats,
+.game-stats {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    font-family: 'Minecraft-reg', sans-serif;
+    text-align: left;
+    width: 100%;
+}
+
+.player-stats h2,
+.game-stats h3 {
+    font-family: 'Minecraft', sans-serif;
+    color: #91baed;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.player-stats p,
+.game-stats p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.player-stats p strong,
+.game-stats p strong {
+    font-weight: bold;
+    color: #91baed;
+}
+
+/* Player Skin Section */
+.player-skin {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.skin-image {
+    width: auto;
+    height: 400px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bobbing 2s ease-in-out infinite;
+    object-fit: cover; /* To avoid distortion */
+    margin-left: 200px;
+}
+
+/* Bobbing Animation */
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Center Duel Stats below the player stats */
+.game-stats.duel-stats {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Progress Bar Styles for K/D Ratio */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    text-align: center;
+    color: white;
+    line-height: 20px; /* Center text vertically */
+    background-color: #2196f3;
+    border-radius: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    .search input,
+    .game-select select {
+        width: 100%;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+}

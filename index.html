@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wave-wrapper">
+      <img src="assets/wave-1.svg" />
+      <img src="assets/wave-2.svg" />
+      <img src="assets/wave-3.svg" />
+      <img src="assets/wave-4.svg" />
+      <img src="assets/wave-5.svg" id="shape" />
+    </div>
+    <h1>MINECRAFT HYPIXEL STATS</h1>
+    <img class="cloud" src="assets/minecraft-clouds.png" alt="">
+    <div class="search">
+        <input type="text" placeholder="Player Name or UUID" name="search" id="search-input">
+        <button id="search-btn" class="button">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+    <div id="game-select" class="game-select">
+      <label for="game-type">Select Game Type:</label>
+      <select id="game-type" class="game-select-input">
+          <option value="">Select a game</option>
+          <option value="Bedwars">Bedwars</option>
+          <option value="SkyWars">SkyWars</option>
+          <option value="Duels">Duels</option>
+          <option value="Build Battle">BuildBattle</option>
+          <option value="HungerGames">Hunger Games</option>
+          <!-- Add more game types as needed -->
+      </select>
+  </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Left Column for Player Skin -->
+    <div class="player-skin">
+        <img id="skin-image" class="skin-image" src="" alt="Player Skin">
+    </div>
+
+    <!-- Right Column for Player Stats and Game Stats -->
+    <div class="player-stats" id="player-stats"></div>
+    <div class="game-stats" id="game-stats"></div>
+  </div>
+
+  <!-- Link to your script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
