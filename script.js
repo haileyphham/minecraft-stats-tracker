@@ -25,6 +25,9 @@ async function fetchPlayerStats(identifier) {
             displayGeneralStats(data);
             updateGameStats(data);
             renderPlayerSkin(data.player.uuid);
+
+            // Trigger smooth scroll after content is loaded
+            scrollToStats();
         } else {
             // Player not found or invalid input
             console.error('Error: Player not found or invalid input');
@@ -119,3 +122,15 @@ document.getElementById('game-type').addEventListener('change', () => {
         updateGameStats(currentPlayerData);
     }
 });
+
+function scrollToStats() {
+    // Get the element where you want to scroll
+    const statsContainer = document.querySelector('.main-container');
+    if (statsContainer) {
+        // Scroll to the stats container smoothly
+        statsContainer.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',  // Aligns the stats container at the top of the viewport
+        });
+    }
+}

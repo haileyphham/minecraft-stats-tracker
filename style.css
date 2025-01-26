@@ -10,7 +10,9 @@
     font-family: 'Minecraft-reg';
     src: url(fonts/minecraft-reg.otf);
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* Global Styles */
 * {
     padding: 0;
@@ -159,6 +161,8 @@ header h1 {
 .game-select {
     margin-top: 20px;
     text-align: center;
+    font-family: 'Minecraft-reg', sans-serif;
+    color: #3475c7;
 }
 
 .game-select select {
@@ -215,7 +219,7 @@ header h1 {
 .player-stats p,
 .game-stats p {
     font-size: 1rem;
-    color: #333;
+    color: #3475c7;
     margin: 5px 0;
 }
 
@@ -253,8 +257,8 @@ header h1 {
 }
 
 /* Center Duel Stats below the player stats */
-.game-stats.duel-stats {
-    grid-column: span 2;
+.game-stats {
+    grid-column: span 2; /* Take full width of the grid */
     text-align: center;
     margin-top: 20px;
 }
